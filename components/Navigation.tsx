@@ -11,7 +11,7 @@ const Navigation: FC = () => {
     { title: "misc", link: "/misc" },
   ];
   return (
-    <nav className="flex mx-auto items-center justify-between sm:justify-around flex-wrap p-6">
+    <nav className="flex max-w-screen-lg mx-auto items-center justify-between flex-wrap p-6">
       <img
         src="/assets/Logo.svg"
         alt="alaazorkane-logo"
