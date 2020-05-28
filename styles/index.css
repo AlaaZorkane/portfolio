@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
+
+*::selection {
+  background-color: #222;
+  color: white;
+}
+
 @tailwind utilities;
