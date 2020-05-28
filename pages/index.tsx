@@ -1,11 +1,20 @@
-import Navigation from "@/components/Navigation";
 import React, { FC } from "react";
+import Hello from "@/components/Hello";
+import SkillsTable from "@/components/SkillsTable";
 
 const IndexPage: FC = () => (
-  <div className="h-screen leading-normal tracking-normal font-serif">
-    <Navigation />
-    <img src="/assets/doodles/hero.svg" alt="hero" />
-  </div>
+  <section className="flex items-center justify-between flex-wrap">
+    <div className="flex flex-col mb-6">
+      <Hello />
+      <SkillsTable />
+    </div>
+    <img
+      className="mx-auto sm:mx-0"
+      width="500"
+      src="/assets/doodles/hero.svg"
+      alt="hero"
+    />
+  </section>
 );
 
 export default IndexPage;
