@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "../styles/index.css";
+import Layout from "@/components/Layout";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -11,7 +12,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
         rel="stylesheet"
       ></link>
     </Head>
-    <Component {...pageProps} />
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   </>
 );
 
