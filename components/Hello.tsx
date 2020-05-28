@@ -5,9 +5,9 @@ type Props = {
 };
 
 const Hello: FC<Props> = ({ who }) => (
-  <div className="m-auto">
+  <div className="m-auto text-yellow-400 text-center">
     <h1 className="text-3xl">Hello {who}!</h1>
-    <h4 className="text-center text-sm italic">yes, it works 🎉</h4>
+    <h4 className="text-sm italic">yes, it works 🎉</h4>
   </div>
 );
 

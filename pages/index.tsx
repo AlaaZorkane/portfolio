@@ -1,9 +1,10 @@
-import Hello from "@/components/Hello";
+import Navigation from "@/components/Navigation";
 import React, { FC } from "react";
 
-const IndexPage: FC<void> = () => (
-  <div className="flex h-screen">
-    <Hello who="world" />
+const IndexPage: FC = () => (
+  <div className="h-screen leading-normal tracking-normal font-serif">
+    <Navigation />
+    <img src="/assets/doodles/hero.svg" alt="hero" />
   </div>
 );
 

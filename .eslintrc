@@ -13,7 +13,7 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "prettier/prettier": ["warn", {}, { "usePrettierrc": true }],
     "react/prop-types": "off" // Use FC<PropsType>, Ill turn this on again after they fix this issue https://github.com/yannickcr/eslint-plugin-react/issues/2353
   }
 }
