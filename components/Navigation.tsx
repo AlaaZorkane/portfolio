@@ -11,13 +11,14 @@ const Navigation: FC = () => {
     { title: "misc", link: "/misc" },
   ];
   return (
-    <nav className="flex max-w-screen-lg mx-auto items-center justify-between flex-wrap p-6">
-      <img
-        src="/assets/Logo.svg"
-        alt="alaazorkane-logo"
-        width="70"
-        className="animate__animated animate__zoomIn"
-      />
+    <nav className="flex p-6 items-center justify-between flex-wrap sm:flex-no-wrap sm:justify-around">
+      <div>
+        <img
+          src="/assets/Logo.svg"
+          alt="alaazorkane-logo"
+          className="animate__animated animate__zoomIn w-20 sm:w-24"
+        />
+      </div>
       <div
         className="block sm:hidden cursor-pointer"
         onClick={() => setMenu(!menu)}
@@ -27,7 +28,7 @@ const Navigation: FC = () => {
       <div
         className={`${
           menu ? "block" : "hidden"
-        } animate__animated animate__fadeIn w-full flex-grow sm:flex sm:flex-grow-0 sm:items-center sm:w-auto`}
+        } animate__animated animate__fadeIn w-full sm:w-auto sm:block`}
       >
         <div className="text-lg">
           {links.map((link) => (

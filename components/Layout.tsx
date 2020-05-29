@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 type Props = {
   children: ReactNode;
@@ -7,9 +8,10 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <div>
+    <div className="flex flex-col justify-between h-screen">
       <Navigation />
-      <div className="w-full max-w-screen-lg mx-auto px-6">{children}</div>
+      <div className="container mx-auto p-6">{children}</div>
+      <Footer />
     </div>
   );
 };
