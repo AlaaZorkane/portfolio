@@ -9,7 +9,7 @@ const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const SkillsTable: FC = () => {
   const [domain, setDomain] = useState("langs");
-  const { data, mutate } = useSWR<NormalizedDomains>("/api/skills", fetcher);
+  const { data } = useSWR<NormalizedDomains>("/api/skills", fetcher);
   // TODO: Some fancy loading skeleton
   if (!data) return <p>Loading...</p>;
   const handleDomainChange = (newDomain: string) => {
