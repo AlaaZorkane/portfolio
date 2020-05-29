@@ -13,7 +13,7 @@ const SkillsTable: FC = () => {
   // TODO: Some fancy loading skeleton
   if (!data) return <p>Loading...</p>;
   const handleDomainChange = (newDomain: string) => {
-    mutate();
+    //mutate();
     setDomain(newDomain);
   };
   return (
