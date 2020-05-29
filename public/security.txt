@@ -1,0 +1,3 @@
+Contact: mailto:alaazorkane@gmail.com
+Preferred-Languages: en, fr, ar
+Canonical: https://alaazorkane.me/security.txt
