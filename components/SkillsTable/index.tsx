@@ -1,19 +1,29 @@
 import useSWR from "swr";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import DomainsNavigator from "./DomainsNavigator";
-import { Domain } from "@/interfaces";
+import { NormalizedDomains } from "@/interfaces";
+import DomainSkills from "./DomainSkills";
+import DomainContext from "./DomainContext";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
-const Skills: FC = () => {
-  const { data }: { data?: Domain[] } = useSWR("/api/skills", fetcher);
+const SkillsTable: FC = () => {
+  const [domain, setDomain] = useState("langs");
+  const { data, mutate } = useSWR<NormalizedDomains>("/api/skills", fetcher);
   // TODO: Some fancy loading skeleton
   if (!data) return <p>Loading...</p>;
+  const handleDomainChange = (newDomain: string) => {
+    mutate();
+    setDomain(newDomain);
+  };
   return (
-    <div className="flex flex-col flex-grow">
-      <DomainsNavigator domains={data} />
-    </div>
+    <DomainContext.Provider value={data}>
+      <div className="flex flex-col flex-grow tracking-wider">
+        <DomainsNavigator onChange={handleDomainChange} />
+        <DomainSkills selected={domain} />
+      </div>
+    </DomainContext.Provider>
   );
 };
 
-export default Skills;
+export default SkillsTable;

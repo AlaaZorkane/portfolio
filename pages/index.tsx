@@ -9,7 +9,7 @@ const IndexPage: FC = () => (
       <SkillsTable />
     </div>
     <img
-      className="mx-auto sm:mx-0"
+      className="mx-auto"
       width="500"
       src="/assets/doodles/hero.svg"
       alt="hero"

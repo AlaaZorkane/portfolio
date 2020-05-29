@@ -1,28 +1,25 @@
-import React, { FC } from "react";
-import { Domain } from "@/interfaces";
-import Icon from "../Icon";
+import React, { FC, useContext } from "react";
+import DomainContext from "./DomainContext";
 
 type Props = {
-  domains: Domain[];
+  onChange: (newDomain: string) => void;
 };
 
 // TODO: Current tab indicator
-const DomainsNavigator: FC<Props> = ({ domains }) => {
+const DomainsNavigator: FC<Props> = ({ onChange }) => {
+  const domains = useContext(DomainContext).allIds;
   return (
     <div className="flex justify-between flex-wrap border-black border-4 select-none">
       <div className="flex inline-block font-bold">
         {domains.map((domain) => (
-          <a
-            href="#"
-            className="hover:bg-gray-200 p-3 cursor-pointer animate__animated animate__fadeIn"
-            key={domain.title}
+          <button
+            onClick={() => onChange(domain)}
+            className="hover:bg-gray-200 p-3 cursor-pointer animate__animated animate__fadeIn focus:outline-none"
+            key={domain}
           >
-            {domain.title}
-          </a>
+            {domain}
+          </button>
         ))}
-      </div>
-      <div className="flex p-3 cursor-pointer font-bold">
-        <Icon icon="expand" size="15" />
       </div>
     </div>
   );
