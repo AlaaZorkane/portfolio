@@ -14,11 +14,13 @@ const DomainSkills: FC<Props> = ({ selected }) => {
         <div className="flex flex-row p-1 ml-2" key={skill.name}>
           <h3 className="capitalize w-20 mr-1">{skill.name}</h3>
           <div className="flex">
-            {[...Array(skill.stars)].map((key) => (
-              <Icon key={key} icon="circleFill" size="10" className="mr-2" />
-            ))}
-            {[...Array(5 - skill.stars)].map((key) => (
-              <Icon key={key} icon="circleEmpty" size="10" className="mr-2" />
+            {[...Array(5)].map((_, key) => (
+              <Icon
+                key={key}
+                icon={key + 1 <= skill.stars ? "circleFill" : "circleEmpty"}
+                size="10"
+                className="mr-2"
+              />
             ))}
           </div>
         </div>

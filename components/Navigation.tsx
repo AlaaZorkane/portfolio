@@ -1,17 +1,18 @@
 import React, { FC, useState } from "react";
+import Link from "next/link";
 import Icon from "./Icon";
 
 // TODO: Add border down to indicate current page
 const Navigation: FC = () => {
   const [menu, setMenu] = useState(false);
   const links = [
-    { title: "whoami", link: "/" },
-    { title: "projects", link: "/projects" },
-    { title: "blog", link: "/blog" },
-    { title: "misc", link: "/misc" },
+    { title: "whoami", location: "/" },
+    { title: "projects", location: "/projects" },
+    { title: "blog", location: "/blog" },
+    { title: "misc", location: "/misc" },
   ];
   return (
-    <nav className="flex p-6 items-center justify-between flex-wrap sm:flex-no-wrap sm:justify-around">
+    <nav className="flex p-6 sm:pb-0 items-center justify-between flex-wrap sm:flex-no-wrap sm:justify-around">
       <div>
         <img
           src="/assets/Logo.svg"
@@ -32,13 +33,11 @@ const Navigation: FC = () => {
       >
         <div className="text-lg">
           {links.map((link) => (
-            <a
-              className="block sm:inline-block sm:mx-3 sm:border-transparent sm:pb-2 my-5 border-b pb-1 border-black transition duration-200 ease-in-out transform hover:translate-x-1 sm:hover:translate-x-0 sm:hover:-translate-y-1"
-              href="#"
-              key={link.title}
-            >
-              {link.title}
-            </a>
+            <Link href={link.location} key={link.title}>
+              <a className="block sm:inline-block sm:mx-3 sm:border-transparent sm:pb-2 my-5 border-b pb-1 border-black transition duration-200 ease-in-out transform hover:translate-x-1 sm:hover:translate-x-0 sm:hover:-translate-y-1">
+                {link.title}
+              </a>
+            </Link>
           ))}
         </div>
       </div>

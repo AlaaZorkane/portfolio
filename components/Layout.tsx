@@ -1,4 +1,5 @@
 import React, { FC, ReactNode } from "react";
+import { NextSeo } from "next-seo";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
@@ -8,11 +9,17 @@ type Props = {
 
 const Layout: FC<Props> = ({ children }) => {
   return (
-    <div className="flex flex-col justify-between h-screen">
-      <Navigation />
-      <div className="container mx-auto p-6">{children}</div>
-      <Footer />
-    </div>
+    <>
+      <NextSeo
+        titleTemplate="Alaa Zorkane | %s"
+        description="Hello, my name is Alaa Zorkane, I make applications, libraries, servers and everything in between!"
+      />
+      <div className="flex flex-col justify-between h-screen">
+        <Navigation />
+        <div className="container mx-auto px-6">{children}</div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

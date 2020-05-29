@@ -4,6 +4,7 @@ import Head from "next/head";
 import "../styles/index.css";
 import Layout from "@/components/Layout";
 
+// TODO: handle global loading on each link change
 const App: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
