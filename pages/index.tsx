@@ -5,7 +5,7 @@ import SkillsTable from "@/components/SkillsTable";
 
 const IndexPage: FC = () => (
   <>
-    <NextSeo title="whoami" />
+    <NextSeo title="Software Engineer" />
     <section className="flex items-center justify-between flex-wrap sm:justify-around sm:flex-no-wrap">
       <div className="flex flex-col mb-6">
         <Hello />
