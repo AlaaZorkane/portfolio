@@ -10,22 +10,5 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [
-    require("tailwindcss-animatecss")({
-      classes: [
-        "animate__animated",
-        "animate__fadeIn",
-        "animate__fadeInLeft",
-        "animate__flipInX",
-        "animate__zoomIn",
-        "animate__slideInLeft",
-        "animate__slideInRight",
-      ],
-      settings: {
-        animatedSpeed: 1000,
-        animationDelaySpeed: 1000,
-      },
-      variants: ["responsive", "hover", "reduced-motion"],
-    }),
-  ],
+  plugins: [],
 };

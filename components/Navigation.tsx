@@ -17,7 +17,7 @@ const Navigation: FC = () => {
         <img
           src="/assets/Logo.svg"
           alt="alaazorkane-logo"
-          className="animate__animated animate__zoomIn w-20 sm:w-24"
+          className="w-20 sm:w-24"
         />
       </div>
       <div
@@ -26,11 +26,7 @@ const Navigation: FC = () => {
       >
         <Icon icon="menu" size="25" />
       </div>
-      <div
-        className={`${
-          menu ? "block" : "hidden"
-        } animate__animated animate__fadeIn w-full sm:w-auto sm:block`}
-      >
+      <div className={`${menu ? "block" : "hidden"} w-full sm:w-auto sm:block`}>
         <div className="text-lg">
           {links.map((link) => (
             <Link href={link.location} key={link.title}>

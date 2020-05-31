@@ -14,7 +14,7 @@ const DomainsNavigator: FC<Props> = ({ onChange }) => {
         {domains.map((domain) => (
           <button
             onClick={() => onChange(domain)}
-            className="hover:bg-gray-200 p-3 cursor-pointer animate__animated animate__fadeIn focus:outline-none"
+            className="hover:bg-gray-200 p-3 cursor-pointer focus:outline-none"
             key={domain}
           >
             {domain}
