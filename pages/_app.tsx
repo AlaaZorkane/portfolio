@@ -1,10 +1,16 @@
 import React, { FC } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import "../styles/index.css";
+import Router from "next/router";
+import NProgress from "nprogress";
 import Layout from "@/components/Layout";
+import "@/styles/index.css";
+import "@/styles/nprogress.css";
 
-// TODO: handle global loading on each link change
+NProgress.configure({ showSpinner: true });
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 const App: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
@@ -15,6 +21,12 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
     </Head>
     <Layout>
       <Component {...pageProps} />
+      <img
+        src="/assets/doodles/confetti.svg"
+        alt="confetti"
+        className="absolute hidden lg:block bottom-0 left-0"
+        style={{ zIndex: -1 }}
+      />
     </Layout>
   </>
 );

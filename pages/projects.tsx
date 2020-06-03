@@ -1,13 +1,49 @@
 import React, { FC } from "react";
 import { NextSeo } from "next-seo";
+import ProjectCard from "@/components/ProjectCard";
+import { NormalizedProjects } from "@/interfaces";
+import useSWR from "swr";
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const ProjectsPage: FC = () => {
+  const { data } = useSWR<NormalizedProjects>("/api/projects", fetcher);
+  if (!data) return <h1>Loading...</h1>;
+  const projects = data.allIds;
   return (
     <>
       <NextSeo title="Projects" />
-      <h1 className="text-3xl font-light tracking-wider text-center">
-        Work in progress ~
-      </h1>
+      <section className="flex flex-wrap -mx-3 z-10 sm:mt-10">
+        {projects.map((projectId) => {
+          const { title, description, techs } = data.byId[projectId];
+          return (
+            <div
+              className="my-3 px-3 w-full overflow-hidden lg:w-1/3"
+              key={projectId}
+            >
+              <ProjectCard
+                title={title}
+                description={description}
+                techs={techs}
+              />
+            </div>
+          );
+        })}
+      </section>
+      <a
+        className="mx-auto lg:mx-0 hover:underline cursor-pointer mb-3"
+        href="https://github.com/alaazorkane"
+        target="_blank"
+        rel="noreferrer"
+      >
+        More on my Github!
+      </a>
+      <img
+        src="/assets/doodles/bulb.png"
+        alt="bulb-doodle"
+        className="absolute hidden lg:block bottom-0 w-1/3"
+        style={{ right: "10%" }}
+      />
     </>
   );
 };

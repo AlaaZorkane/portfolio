@@ -9,7 +9,7 @@ type Props = {
 const DomainSkills: FC<Props> = ({ selected }) => {
   const { skills } = useContext(DomainContext).byId[selected];
   return (
-    <div className="flex flex-col border-4 border-black border-t-0 py-2">
+    <div className="flex flex-col border-2 rounded-sm border-black border-t-0 py-2">
       {skills.map((skill) => (
         <div className="flex flex-row p-1 ml-2" key={skill.name}>
           <h3 className="capitalize w-20 mr-1">{skill.name}</h3>

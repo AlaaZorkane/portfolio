@@ -1,5 +1,5 @@
 {
-  "name": "next-typescript-tailwind",
+  "name": "alaazorkane",
   "version": "1.0.0",
   "author": "Alaa Zorkane <https://github.com/alaazorkane>",
   "scripts": {
@@ -11,12 +11,14 @@
   "dependencies": {
     "next": "latest",
     "next-seo": "^4.5.0",
+    "nprogress": "^0.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "swr": "^0.2.2"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "@typescript-eslint/eslint-plugin": "^3.0.1",

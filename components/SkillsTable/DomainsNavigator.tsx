@@ -9,12 +9,12 @@ type Props = {
 const DomainsNavigator: FC<Props> = ({ onChange }) => {
   const domains = useContext(DomainContext).allIds;
   return (
-    <div className="flex justify-between flex-wrap border-black border-4 select-none">
-      <div className="flex inline-block font-bold">
+    <div className="flex justify-between flex-wrap border-black border-2 rounded-sm select-none">
+      <div className="flex inline-block">
         {domains.map((domain) => (
           <button
             onClick={() => onChange(domain)}
-            className="hover:bg-gray-200 p-3 cursor-pointer focus:outline-none"
+            className="hover:bg-gray-200 p-3 cursor-pointer focus:outline-none font-bold tracking-wider"
             key={domain}
           >
             {domain}
