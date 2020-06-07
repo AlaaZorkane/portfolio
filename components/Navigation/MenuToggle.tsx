@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const Path = (props: any) => (
   <motion.path
     fill="transparent"
+    stroke="black"
     strokeWidth="2"
-    stroke="hsl(0, 0%, 18%)"
     strokeLinecap="round"
     {...props}
   />
@@ -22,7 +22,7 @@ type Props = {
 const MenuToggle: FC<Props> = ({ toggle }) => (
   <motion.div
     onClick={toggle}
-    className="focus:outline-none"
+    className="focus:outline-none select-none cursor-pointer"
     initial={{ x: -10, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
     transition={{ type: "spring", stiffness: 30 }}

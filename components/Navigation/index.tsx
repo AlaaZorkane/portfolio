@@ -2,7 +2,10 @@ import React, { FC } from "react";
 import Logo from "../Logo";
 import { NavLink } from "@/interfaces";
 import NavLinks from "./NavLinks";
+import MenuToggle from "./MenuToggle";
+import { motion, useCycle, AnimatePresence } from "framer-motion";
 import MenuLinks from "./MenuLinks";
+import SocialLinks from "../SocialLinks";
 
 const links: NavLink[] = [
   { title: "whoami", location: "/" },
@@ -11,20 +14,32 @@ const links: NavLink[] = [
   { title: "misc", location: "/misc" },
 ];
 
-// TODO: Add border down to indicate current page
 const Navigation: FC = () => {
+  const [isOpen, toggleOpen] = useCycle(false, true);
   return (
-    <nav className="flex py-6 items-center justify-between z-10 bg-white">
-      <div>
-        <Logo />
-      </div>
-      <div className="block sm:hidden">
-        <MenuLinks links={links} />
-      </div>
-      <div className="hidden sm:block">
-        <NavLinks links={links} />
-      </div>
-    </nav>
+    <>
+      <nav className="flex py-6 items-center justify-between bg-white">
+        <div>
+          <Logo />
+        </div>
+        <motion.div
+          className="block flex flex-row sm:hidden"
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+        >
+          <SocialLinks className="inline-flex mr-3" />
+          <MenuToggle toggle={() => toggleOpen()} />
+        </motion.div>
+        <div className="hidden sm:block">
+          <NavLinks links={links} />
+        </div>
+      </nav>
+      <AnimatePresence>
+        {isOpen && (
+          <MenuLinks links={links} toggle={() => toggleOpen()} key={"menu"} />
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
