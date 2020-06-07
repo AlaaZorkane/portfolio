@@ -22,3 +22,8 @@ export interface NormalizedProjects {
   byId: { [id: string]: Project };
   allIds: string[];
 }
+
+export interface NavLink {
+  title: string;
+  location: string;
+}

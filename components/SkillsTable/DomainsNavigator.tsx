@@ -3,22 +3,24 @@ import DomainContext from "./DomainContext";
 
 type Props = {
   onChange: (newDomain: string) => void;
+  active: string;
 };
 
-// TODO: Current tab indicator
-const DomainsNavigator: FC<Props> = ({ onChange }) => {
+const DomainsNavigator: FC<Props> = ({ onChange, active }) => {
   const domains = useContext(DomainContext).allIds;
   return (
     <div className="flex justify-between flex-wrap border-black border-2 rounded-sm select-none">
       <div className="flex inline-block">
         {domains.map((domain) => (
-          <button
+          <div
             onClick={() => onChange(domain)}
-            className="hover:bg-gray-200 p-3 cursor-pointer focus:outline-none font-bold tracking-wider"
+            className={`p-3 cursor-pointer font-bold tracking-wider ${
+              active === domain ? "bg-black text-white" : "hover:bg-gray-200"
+            }`}
             key={domain}
           >
             {domain}
-          </button>
+          </div>
         ))}
       </div>
     </div>

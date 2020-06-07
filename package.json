@@ -9,6 +9,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "framer-motion": "^1.11.0",
     "next": "latest",
     "next-seo": "^4.5.0",
     "nprogress": "^0.2.0",
