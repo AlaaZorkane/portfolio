@@ -5,8 +5,8 @@ const MiscPage: FC = () => {
   return (
     <>
       <NextSeo title="Other" />
-      <h1 className="text-3xl font-light tracking-wider text-center my-auto">
-        Work in progress
+      <h1 className="text-3xl font-light tracking-wider">
+        Here goes everything else...
       </h1>
     </>
   );
