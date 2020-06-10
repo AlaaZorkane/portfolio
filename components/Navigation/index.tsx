@@ -8,10 +8,10 @@ import MenuLinks from "./MenuLinks";
 import SocialLinks from "../SocialLinks";
 
 const links: NavLink[] = [
-  { title: "whoami", location: "/" },
-  { title: "projects", location: "/projects" },
-  { title: "blog", location: "/blog" },
-  { title: "misc", location: "/misc" },
+  { title: "whoami", location: "/", external: false },
+  { title: "projects", location: "/projects", external: false },
+  { title: "blog", location: "https://dev.to/alaazorkane", external: true },
+  { title: "stuff", location: "/stuff", external: false },
 ];
 
 const Navigation: FC = () => {

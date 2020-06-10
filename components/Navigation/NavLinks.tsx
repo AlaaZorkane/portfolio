@@ -25,7 +25,11 @@ const item: Variants = {
 
 const NavLinks: FC<Props> = ({ links }) => {
   const router = useRouter();
-  console.log(router.pathname);
+  const linkBaseStyle = "mr-4 cursor-pointer border-b-2 hover:border-black";
+  const linkProps = {
+    whileHover: { y: -3 },
+    variants: item,
+  };
   return (
     <motion.div
       className="flex flex-row text-lg"
@@ -33,19 +37,34 @@ const NavLinks: FC<Props> = ({ links }) => {
       initial="hidden"
       animate="show"
     >
-      {links.map((link) => (
-        <Link href={link.location} key={link.title} passHref>
+      {links.map((link) => {
+        if (!link.external)
+          return (
+            <Link href={link.location} key={link.title} passHref>
+              <motion.a
+                {...linkProps}
+                className={`${linkBaseStyle} ${
+                  router.pathname === link.location && "border-black"
+                }`}
+                title={link.title}
+              >
+                {link.title}
+              </motion.a>
+            </Link>
+          );
+        return (
           <motion.a
-            className={`mr-4 cursor-pointer border-b-2 hover:border-black ${
-              router.pathname === link.location && "border-black"
-            }`}
-            whileHover={{ y: -3 }}
-            variants={item}
+            {...linkProps}
+            href={link.location}
+            className={`${linkBaseStyle} external`}
+            title={link.title}
+            key={link.title}
+            target="_blank"
           >
             {link.title}
           </motion.a>
-        </Link>
-      ))}
+        );
+      })}
       <SocialLinks className="flex inline-flex" />
     </motion.div>
   );
