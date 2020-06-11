@@ -1,0 +1,41 @@
+{
+  "byId": {
+    "langs": {
+      "title": "langs",
+      "skills": [
+        { "name": "js/ts", "stars": 5 },
+        { "name": "c/c++", "stars": 3 },
+        { "name": "python", "stars": 3 },
+        { "name": "bash", "stars": 2 }
+      ]
+    },
+    "frontend": {
+      "title": "frontend",
+      "skills": [
+        { "name": "vue", "stars": 4 },
+        { "name": "react", "stars": 3 },
+        { "name": "vuetify", "stars": 4 },
+        { "name": "tailwind", "stars": 2 }
+      ]
+    },
+    "backend": {
+      "title": "backend",
+      "skills": [
+        { "name": "express", "stars": 4 },
+        { "name": "firebase", "stars": 2 },
+        { "name": "mongodb", "stars": 3 },
+        { "name": "postgre", "stars": 1 }
+      ]
+    },
+    "tools": {
+      "title": "tools",
+      "skills": [
+        { "name": "git", "stars": 4 },
+        { "name": "docker", "stars": 3 },
+        { "name": "kubernetes", "stars": 2 },
+        { "name": "figma", "stars": 4 }
+      ]
+    }
+  },
+  "allIds": ["langs", "frontend", "backend", "tools"]
+}

@@ -1,45 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { NormalizedProjects } from "@/interfaces";
+import projects from "@/data/projects.json";
 
-// TODO: hook this with firebase in the next major version
 export default (
   _req: NextApiRequest,
   res: NextApiResponse<NormalizedProjects>
 ): void => {
-  const mock: NormalizedProjects = {
-    byId: {
-      Cub3D: {
-        title: "Cub3D",
-        description:
-          "A project where I recreated some of the aspects of the famous game Wolfenstein3D entirely from scratch, where I learned about techniques like raycasting and drawing algorthims.",
-        techs: ["minilibx", "C lang"],
-      },
-      Difys: {
-        title: "Difys",
-        description:
-          "A headless botting framework made to help run user scripts to automate actions on a famous online mmorpg game",
-        techs: ["websocket", "javascript"],
-      },
-      Time: {
-        title: "Time",
-        description:
-          "A time machine that walks you through the history of mankind, with facts, images and videos, from homo sapiens to modern history.",
-        techs: ["React", "Redux", "Firebase"],
-      },
-      Output2Hash: {
-        title: "Output2Hash",
-        description:
-          "A tool to help competitors of OpenSource days competitive programing contest hash their results via a user interface.",
-        techs: ["Vue"],
-      },
-      Ft_server: {
-        title: "Ft_server",
-        description:
-          "A dockerfile that automises the whole setup of an ssl nginx wordpress phpmyadmin container under debian.",
-        techs: ["Docker", "Linux"],
-      },
-    },
-    allIds: ["Cub3D", "Difys", "Time", "Output2Hash", "Ft_server"],
-  };
-  res.status(200).json(mock);
+  res.status(200).json(projects);
 };
