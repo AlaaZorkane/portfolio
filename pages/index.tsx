@@ -37,7 +37,7 @@ const IndexPage: FC = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 30 }}
             whileHover={{ rotateZ: 3 }}
-            src="/assets/doodles/hero.png"
+            src={require("@/assets/doodles/hero.png")}
             alt="hero"
             className="w-4/6 sm:w-auto xl:w-5/12 mb-4 sm:mb-0 mx-auto lg:mx-0"
           />

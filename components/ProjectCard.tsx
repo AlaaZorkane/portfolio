@@ -3,7 +3,7 @@ import { Project } from "@/interfaces";
 
 const ProjectCard: FC<Project> = ({ title, description, techs }) => {
   return (
-    <div className="border-2 border-black rounded p-3 border-l-4 bg-white">
+    <div className="border-2 border-black rounded p-3 border-l-4 lg:border-2 bg-white">
       <div className="mb-3 lg:h-40">
         <h2 className="text-xl font-bold">{title}</h2>
         <p className="text-lg font-light">{description}</p>

@@ -39,7 +39,7 @@ const ProjectsPage: FC = () => {
         More on my Github!
       </a>
       <img
-        src="/assets/doodles/bulb.png"
+        src={require("@/assets/doodles/bulb.png")}
         alt="bulb-doodle"
         className="absolute hidden lg:block bottom-0 w-1/3"
         style={{ right: "10%" }}

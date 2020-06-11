@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "framer-motion": "^1.11.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
     "next": "latest",
+    "next-optimized-images": "^2.6.1",
     "next-seo": "^4.5.0",
     "nprogress": "^0.2.0",
     "react": "^16.12.0",

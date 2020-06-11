@@ -23,7 +23,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
     <Layout>
       <Component {...pageProps} />
       <motion.img
-        src="/assets/doodles/confetti.svg"
+        src={require("@/assets/doodles/confetti.svg")}
         alt="confetti"
         className="absolute hidden lg:block bottom-0 left-0"
         initial={{ opacity: 0, x: -20 }}
