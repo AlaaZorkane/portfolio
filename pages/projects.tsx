@@ -1,13 +1,14 @@
 import React, { FC } from "react";
 import { NextSeo } from "next-seo";
 import ProjectCard from "@/components/ProjectCard";
-import { NormalizedProjects, NormalizedData } from "@/interfaces";
+import { NormalizedData, Project } from "@/interfaces";
 import useSWR from "swr";
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const ProjectsPage: FC = () => {
   const { data } = useSWR<NormalizedData<Project>>("/api/projects", fetcher);
+  if (!data) return <p>Loading...</p>;
   const projects = data.allIds;
   return (
     <>
@@ -20,7 +21,11 @@ const ProjectsPage: FC = () => {
               className="my-3 px-3 w-full overflow-hidden lg:w-1/3"
               key={projectId}
             >
-              <ProjectCard title={title} techs={techs} />
+              <ProjectCard
+                title={title}
+                techs={techs}
+                description={description}
+              />
             </div>
           );
         })}

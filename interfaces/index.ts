@@ -14,12 +14,8 @@ export interface Project {
   techs: string[];
 }
 
-export interface NormalizedDomains {
-  byId: { [id: string]: Domain };
-  allIds: string[];
-}
-export interface NormalizedProjects {
-  byId: { [id: string]: Project };
+export interface NormalizedData<T> {
+  byId: { [id: string]: T };
   allIds: string[];
 }
 
