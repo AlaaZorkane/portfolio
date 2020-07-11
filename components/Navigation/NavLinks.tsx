@@ -60,12 +60,13 @@ const NavLinks: FC<Props> = ({ links }) => {
             title={link.title}
             key={link.title}
             target="_blank"
+            rel="noreferrer"
           >
             {link.title}
           </motion.a>
         );
       })}
-      <SocialLinks className="flex inline-flex" />
+      <SocialLinks className="inline-flex" />
     </motion.div>
   );
 };
