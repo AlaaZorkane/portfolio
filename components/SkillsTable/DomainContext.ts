@@ -1,7 +1,7 @@
 import { createContext } from "react";
-import { NormalizedDomains } from "@/interfaces";
+import { NormalizedData, Domain } from "@/interfaces";
 
-const DomainContext = createContext<NormalizedDomains>({
+const DomainContext = createContext<NormalizedData<Domain>>({
   allIds: [],
   byId: {},
 });

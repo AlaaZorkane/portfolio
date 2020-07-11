@@ -23,7 +23,7 @@ const Navigation: FC = () => {
           <Logo />
         </div>
         <motion.div
-          className="block flex flex-row sm:hidden"
+          className="flex flex-row sm:hidden"
           initial={false}
           animate={isOpen ? "open" : "closed"}
         >
