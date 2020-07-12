@@ -10,7 +10,7 @@ const DomainsNavigator: FC<Props> = ({ onChange, active }) => {
   const domains = useContext(DomainContext).allIds;
   return (
     <div className="flex justify-between flex-wrap border-black border-2 rounded-sm select-none">
-      <div className="inline-block">
+      <div className="flex">
         {domains.map((domain) => (
           <div
             onClick={() => onChange(domain)}
