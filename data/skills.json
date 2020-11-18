@@ -12,9 +12,9 @@
     "frontend": {
       "title": "frontend",
       "skills": [
-        { "name": "vue", "stars": 4 },
-        { "name": "react", "stars": 4 },
-        { "name": "vuetify", "stars": 2 },
+        { "name": "react/next", "stars": 5 },
+        { "name": "chakra", "stars": 4 },
+        { "name": "emotion", "stars": 3 },
         { "name": "tailwind", "stars": 4 }
       ]
     },
@@ -22,9 +22,9 @@
       "title": "backend",
       "skills": [
         { "name": "express", "stars": 4 },
+        { "name": "graphql", "stars": 4 },
         { "name": "mongodb", "stars": 3 },
-        { "name": "postgre", "stars": 3 },
-        { "name": "firebase", "stars": 1 }
+        { "name": "postgre", "stars": 3 }
       ]
     },
     "tools": {
@@ -32,7 +32,7 @@
       "skills": [
         { "name": "git", "stars": 4 },
         { "name": "docker", "stars": 3 },
-        { "name": "kubernetes", "stars": 1 },
+        { "name": "cypress", "stars": 3 },
         { "name": "figma", "stars": 4 }
       ]
     }
