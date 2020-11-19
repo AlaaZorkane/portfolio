@@ -25,13 +25,13 @@ const Logo: FC = () => {
       <AnimatePresence>
         {name && (
           <motion.p
-            className="self-center tracking-widest ml-1 text-xl"
+            className="self-center ml-1 text-xl tracking-widest"
             initial={{ opacity: 0 }}
             animate={{ x: 5, opacity: 1 }}
             transition={{ type: "spring", stiffness: 30 }}
             exit={{ x: 0, opacity: 0 }}
           >
-            {easter ? "ngular sucks 🥕" : "laa Zorkane"}
+            {easter ? "laaaaaaa" : "laa Zorkane"}
           </motion.p>
         )}
       </AnimatePresence>
